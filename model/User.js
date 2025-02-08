@@ -4,8 +4,8 @@ const userschema = new mongoose.Schema(
   {
     username: {
       type: String,
-      unique: true,
-      required: true,
+      // unique: true,
+      // required: true,
       trim: true,
     },
     email: {
@@ -20,12 +20,10 @@ const userschema = new mongoose.Schema(
     },
     fullName: {
       type: String,
-      required: true,
       trim: true,
     },
     bio: {
       type: String,
-      required: true,
     },
     profilePicture: {
       type: String,
@@ -63,5 +61,4 @@ const userschema = new mongoose.Schema(
   { timestamps: true }
 );
 
-
-module.exports = mongoose.model("User",userschema)
+module.exports = mongoose.model("User", userschema);
