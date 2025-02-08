@@ -1,6 +1,6 @@
 const joi = require("joi");
 
-const registerSchema = joi.object({
+const authSchema = joi.object({
   username: joi
     .string()
     .min(2)
@@ -17,20 +17,6 @@ const registerSchema = joi.object({
     .pattern(new RegExp("^(?=.*[A-Za-z])(?=.*d)(?=.*[!@#$^&*]).{8,}$")),
 });
 
-const signinSchema = joi.object({
-  email: joi
-    .string()
-    .min(6)
-    .max(60)
-    .required()
-    .email({ tlds: { allow: ["com", "net"] } }),
-  password: joi
-    .string()
-    .required()
-    .pattern(new RegExp("^(?=.*[A-Za-z])(?=.*d)(?=.*[!@#$^&*]).{8,}$")),
-});
-
-module.exports = {
-  registerSchema,
-  signinSchema,
+module.exports = { 
+  authSchema,
 };

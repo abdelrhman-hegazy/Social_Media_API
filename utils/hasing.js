@@ -6,6 +6,11 @@ const doHash = (value,saltValue)=>{
     return result
 }
 
+const doCompare = (value,hashedValue) =>{
+    const result = compare(value,hashedValue);
+    return result
+}
 module.exports = {
-    doHash
+    doHash,
+    doCompare
 }

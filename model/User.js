@@ -1,3 +1,4 @@
+const { boolean } = require("joi");
 const mongoose = require("mongoose");
 
 const userschema = new mongoose.Schema(
@@ -32,6 +33,26 @@ const userschema = new mongoose.Schema(
     coverPicture: {
       type: String,
       default: "",
+    },
+    verified: {
+      type: Boolean,
+      default: false,
+    },
+    verificationCode: {
+      type: String,
+      select: false,
+    },
+    verificationCodeValidation: {
+      type: Number,
+      select: false,
+    },
+    forgotPasswordCode: {
+      type: String,
+      select: false,
+    },
+    forgotPasswordCodeValidation: {
+      type: Number,
+      select: false,
     },
     posts: [
       {
